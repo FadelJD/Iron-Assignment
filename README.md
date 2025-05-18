@@ -1,22 +1,3 @@
 # Iron-Assignment
 
-For each input character:
-
-If the character is a digit:
-  - If it matches the previously processed digit, increment the press count for that digit.
-  - If it's a new digit:
-    * Commit the letter corresponding to the previous digit's presses (if any).
-    * Set this new digit as the current `lastKey` and reset its `pressCount` to 1.
-
-If the character is a space:
-  - Commit the letter corresponding to the current `lastKey`'s presses (if any).
-  - Clear the `lastKey` and `pressCount`.
-
-If the character is an asterisk:
-  - Commit the letter corresponding to the current `lastKey`'s presses (if any).
-  - Clear the `lastKey` and `pressCount`.
-  - If the result string has characters, remove the last one.
-
-If the character is a hash:
-  - Commit the letter corresponding to the current `lastKey`'s presses (if any).
-  - Terminate the input processing.
+This assignment was performed using VB.NET at first (Module1.vb) and then later converted the code to C# (Program.cs). The IDE that was used to test the solutions was Visual Studio 2019, and it would be recommended to use a similar IDE or online tool for debugging. The implementation is explained in the implementation.txt file.
