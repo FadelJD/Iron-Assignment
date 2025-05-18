@@ -1,0 +1,23 @@
+To implement the solution, we have to firstly set a dictionary to map out each letter corresponding to each number. Once that is done, we use three declarations of result, lastKey, and pressCount to track our output string, the last key pressed, and how many times it’s been pressed.
+From there, we loop through the input string one character at a time. Depending on what the character is (digit, space, *, or #), we either increment our press count, commit a letter to the result, delete the last letter, or finish processing entirely. The program uses simple state management to remember what number was last pressed and how many times, so it knows exactly which letter to pick from the mapping when it’s time to commit. The final result is converted to uppercase and returned once all characters are processed or the termination character # is hit.
+
+For each input character:
+
+If the character is a digit:
+  - If it matches the previously processed digit, increment the press count for that digit.
+  - If it's a new digit:
+    * Commit the letter corresponding to the previous digit's presses (if any).
+    * Set this new digit as the current `lastKey` and reset its `pressCount` to 1.
+
+If the character is a space:
+  - Commit the letter corresponding to the current `lastKey`'s presses (if any).
+  - Clear the `lastKey` and `pressCount`.
+
+If the character is an asterisk:
+  - Commit the letter corresponding to the current `lastKey`'s presses (if any).
+  - Clear the `lastKey` and `pressCount`.
+  - If the result string has characters, remove the last one.
+
+If the character is a hash:
+  - Commit the letter corresponding to the current `lastKey`'s presses (if any).
+  - Terminate the input processing.
